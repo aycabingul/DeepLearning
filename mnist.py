@@ -95,27 +95,6 @@ model.summary()
 
 
 
-import matplotlib.pyplot as plt
-(x_train,y_train),(x_test,y_test)=mnist.load_data()
-test_goruntu=x_test[0].reshape(1,28*28).astype('float32')/255
-test_goruntu
-y=model.predict(test_goruntu)
-y
-from numpy import argmax
-rakam=argmax(y)
-
-rakam=x_test[1000,:,:]
-plt.imshow(rakam)
-
-import numpy as np
-inx=np.random.randint(0,10000)
-rakam=x_test[inx,:,:]
-plt.imshow(rakam)
-
-y=model.predict(rakam.reshape(1,784)/255)
-tahmin_sonucu=np.argmax(y)
-print("beklenen_sonuc",y_test[inx])
-print("tahmin_sonucu=",tahmin_sonucu)
 
 
 
