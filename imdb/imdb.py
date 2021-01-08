@@ -47,8 +47,7 @@ model.add(layers.Dense(16,
                        use_bias=True,
                        #bunu kullanırsak bias olmaz
                        input_shape=(10000,)))
-#vektör formatında olduğu için 10000 dedikten sonra , koyuyoruz 
-# görüntü olsa 28*28 olucak mesela renkliyse bide üstüne 28*28 çarpı bide 3 gelicek
+#vektör formatında olduğu için 10000 dedikten sonra "," koyuyoruz
 model.add(layers.Dense(32,
                        activation='relu'))
 
@@ -57,6 +56,7 @@ model.add(layers.Dense(1,
                        activation='sigmoid'))
 #modeli tanımladık burada summary ile özetini görelim 
 model.summary()
+
 #birinci katmanda 10000*16 tane bağlantı var +16 tane de hücrenin biası var
 #modeli derle -------------------------------------------
 from keras import optimizers,losses,metrics
